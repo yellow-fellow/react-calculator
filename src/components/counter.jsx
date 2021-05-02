@@ -44,28 +44,22 @@ class Counter extends Component {
                 {this.props.children}
                 <h3><span className = "badge badge-primary" style= {{backgroundColor: '#282c34'}}>{this.state.value}</span></h3>
                 <InputGroup style = {{paddingInline: "50px"}}>
-                    {/* <InputGroupAddon addonType = "prepend">
-                        <InputGroupText>Value:</InputGroupText>
-                    </InputGroupAddon> */}
                     <Input placeholder="Input 1st value here" className = 'm-2' style = {{border: '2px solid'}} onChange = {(e) => {this.setState( {storedValue: this.state.storedValue_1 = e.target.value} )}}></Input>                    
-                </InputGroup>
-                <InputGroup style = {{paddingInline: "50px"}}>
+                    <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>{(this.state.currentState === "operator") ? "": this.state.currentState} </div>
                     <Input placeholder="Input 2nd value here" className = 'm-2' style = {{border: '2px solid'}} onChange = {(e) => {this.setState( {storedValue: this.state.storedValue_2 = e.target.value} )}}></Input>
+                    <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>{(this.state.currentState === 'operator') ? "": "="} {(this.chooseOperator() === "result") ? "": this.chooseOperator()}</div>
                 </InputGroup>
                 <br></br>
-                <div>
-                    {(this.state.storedValue_1 === 0) ? "": this.state.storedValue_1} {(this.state.currentState === "operator") ? "": this.state.currentState} {(this.state.storedValue_2 === 0) ? "": this.state.storedValue_2} {((this.state.storedValue_1 === 0) && (this.state.storedValue_2 === 0)) ? "": "="} {(this.chooseOperator() === "result") ? "": this.chooseOperator()}
-                </div>
                 <br></br>
                 <button className = "btn btn-outline-primary m-4" onClick = {() => {this.setState( {currentState: this.state.currentState = "+"} )}}>+</button>
                 <button className = "btn btn-outline-success m-4" onClick = {() => {this.setState( {currentState: this.state.currentState = "-"} )}}>-</button>
                 <button className = "btn btn-outline-warning m-4" onClick = {() => {this.setState( {currentState: this.state.currentState = "x"} )}}>x</button>
                 <button className = "btn btn-outline-info m-4" onClick = {() => {this.setState( {currentState: this.state.currentState = "/"} )}}>/</button>
                 <br></br>
-                <button className = "btn btn-sm btn-primary m-2" onClick = {() => {this.setState( {value: this.state.value = this.chooseOperator()} )}}>Submit</button>
-                <button className = "btn btn-success btn-sm m-2" onClick = {() => {this.handleIncrement()}}>Increment</button>
-                <button className = "btn btn-warning btn-sm m-2" onClick = {() => {this.handleDelete()}}>Reset</button>
-                <button className = "btn btn-info btn-sm m-2" onClick = {() => {this.handleMultiply()}}>Multiply by 2!</button>
+                <button className = "btn btn-sm btn-primary m-2" onClick = {() => {this.setState( {value: this.state.value = this.chooseOperator()} )}}>Store value</button>
+                <button className = "btn btn-success btn-sm m-2" onClick = {() => {this.handleIncrement()}}>Increment by 1</button>
+                <button className = "btn btn-warning btn-sm m-2" onClick = {() => {this.handleDelete()}}>Reset stored value</button>
+                <button className = "btn btn-info btn-sm m-2" onClick = {() => {this.handleMultiply()}}>Multiply stored value by 2!</button>
             </div>
         );
         
