@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-import Counters from './components/counters';
+import Counter from './components/counter';
+import Description from './components/description';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counters />
+    <Description />
+    <Counter />
   </React.StrictMode>,
   document.getElementById('root')
 );
