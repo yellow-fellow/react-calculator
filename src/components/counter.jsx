@@ -64,6 +64,7 @@ class Counter extends Component {
                     <button className = "btn btn-warning btn-sm m-2" onClick = {() => {this.handleDelete()}}>Reset result</button>
                     <button className = "btn btn-info btn-sm m-2" onClick = {() => {this.handleMultiply()}}>Multiply result by 2</button>
                 </div>
+                <br></br>
             </div>
         );
         

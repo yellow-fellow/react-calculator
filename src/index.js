@@ -4,11 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Counter from './components/counter';
 import Description from './components/description';
+import Gif from './components/gif';
 
 ReactDOM.render(
   <React.StrictMode>
     <Description />
     <Counter />
+    <Gif />
   </React.StrictMode>,
   document.getElementById('root')
 );
